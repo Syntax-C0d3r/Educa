@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14402c">
+<meta name="description" content="EducaBages, acadèmia de reforç escolar a Sant Vicenç de Castellet. Classes individuals i grupals per a Primària, ESO i Batxillerat.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<title>EducaBages | Reforç escolar a Sant Vicenç de Castellet</title>
+<style>
+:root{--g:#14402c;--g2:#0e2f20;--accent:#9a6b2f;--ink:#1f2a24;--muted:#5d6a62;--bg:#fff;--alt:#f4f5f1;--line:#dcdfd8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}.wrap{width:min(1100px,calc(100% - 40px));margin:0 auto}
+h1,h2,h3{font-family:"Poppins","Segoe UI",Arial,sans-serif;font-weight:600;color:var(--g2);margin:0}
+.topbar{background:var(--g2);color:#dfe8e1;font-size:.85rem}.topbar .wrap{display:flex;justify-content:space-between;padding:9px 0}.topbar a{text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.brand b{font:600 1.1rem "Poppins","Segoe UI",Arial,sans-serif;letter-spacing:.06em;color:var(--g2);display:block;line-height:1.1}.brand small{color:var(--muted);font-size:.72rem;letter-spacing:.06em}
+.navlinks{display:flex;align-items:center;gap:28px}.navlinks a{text-decoration:none;font-size:.92rem;color:#38453d}.navlinks a:hover{color:var(--g)}
+.wa{position:fixed;right:20px;bottom:20px;z-index:20;display:flex;align-items:center;gap:10px;padding:13px 20px;background:#1fa855;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:.93rem;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:background .2s,transform .2s}.wa:hover{background:#188a45;transform:translateY(-2px)}
+@media(max-width:620px){.wa{padding:14px;right:14px;bottom:14px}.wa span{display:none}}
+.btn{display:inline-block;padding:12px 24px;background:var(--g);color:#fff;border:1px solid var(--g);border-radius:4px;text-decoration:none;font-weight:600;font-size:.93rem;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn:hover{background:var(--g2)}.btn.o{background:transparent;color:var(--g)}.btn.o:hover{background:var(--alt)}
+.navlinks .btn{color:#fff;padding:9px 20px}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:8px 12px;font-size:1.1rem;color:var(--g)}
+.hero{padding:88px 0;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:72px;align-items:center}
+.kicker{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.2;margin:16px 0 20px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:540px;margin:0 0 30px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+.facts{margin:0;border-top:2px solid var(--g)}.facts div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.facts dt{color:var(--muted);font-size:.9rem}.facts dd{margin:0;font-weight:600;color:var(--g2);text-align:right}
+section{padding:84px 0}.alt{background:var(--alt)}
+.head{max-width:620px;margin-bottom:44px}.head h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin:10px 0 12px}.head p{margin:0;color:var(--muted)}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.col{padding:30px 36px 30px 0;border-bottom:1px solid var(--line)}.col+.col{padding-left:36px;border-left:1px solid var(--line)}
+.col h3{font-size:1.35rem;margin-bottom:8px}.col p{margin:0;color:var(--muted)}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.level{background:#fff;border:1px solid var(--line);border-top:3px solid var(--g);padding:26px}.level span{font:600 .85rem "Poppins","Segoe UI",Arial,sans-serif;color:var(--accent)}.level h3{font-size:1.3rem;margin:6px 0 4px}.level p{margin:0;color:var(--muted);font-size:.93rem}
+.calc{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:#fff}
+.calc-in{padding:36px}.calc-out{padding:36px;background:var(--g2);color:#fff;display:flex;flex-direction:column;justify-content:center}
+label{display:block;font-size:.86rem;font-weight:600;color:#38453d;margin-bottom:7px}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid #c9cec6;border-radius:4px;font:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(20,64,44,.25);border-color:var(--g)}
+.field{margin-bottom:22px}.hrs{display:flex;align-items:center;gap:16px}.hrs output{min-width:74px;font:600 1.3rem "Poppins","Segoe UI",Arial,sans-serif;color:var(--g2)}
+input[type=range]{padding:0;accent-color:var(--g);border:0}
+.calc-out small{color:#b9cabf;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem}
+.total{font:600 3.2rem/1.1 "Poppins","Segoe UI",Arial,sans-serif;margin:8px 0 4px}.total i{font-size:1.1rem;font-style:normal;color:#b9cabf}
+.sum{margin:20px 0 26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);color:#d3e0d7;font-size:.92rem}.sum div{display:flex;justify-content:space-between;padding:4px 0}
+.calc-out .btn{background:#fff;color:var(--g2);border-color:#fff;text-align:center}.calc-out .btn:hover{background:var(--alt)}
+.note{font-size:.8rem;color:var(--muted);margin:14px 0 0}.calc-out .note{color:#a9bcb0}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.row{padding:16px 0;border-bottom:1px solid var(--line)}.row:first-child{padding-top:0}.row strong{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}.row a{text-decoration:none}.row a:hover{color:var(--g);text-decoration:underline}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+form{display:grid;gap:16px}.card{background:#fff;border:1px solid var(--line);padding:32px}
+footer{background:var(--g2);color:#cbd9ce;padding:30px 0;font-size:.88rem}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{text-decoration:none}footer strong{color:#fff;letter-spacing:.06em}
+@media(max-width:860px){.hero .wrap,.info,.contact,.calc{grid-template-columns:1fr;gap:36px}.levels{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.col+.col{padding-left:0;border-left:0}.hero{padding:56px 0}section{padding:60px 0}}
+@media(max-width:620px){.topbar .wrap{justify-content:center}.topbar span:first-child{display:none}.menu-btn{display:block}.navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:18px 22px;gap:14px}.navlinks.open{display:flex}.navlinks .btn{text-align:center}.calc-in,.calc-out{padding:26px}.total{font-size:2.6rem}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Acadèmia de reforç escolar · Primària, ESO i Batxillerat</span><span>Sant Vicenç de Castellet · <a href="tel:+34656913778">656 913 778</a></span></div></div>
+<header><div class="wrap nav">
+<a class="brand" href="#inici" aria-label="EducaBages, inici"><img src="data:image/jpeg;base64,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" alt="Logotip d'EducaBages"><span><b>EDUCABAGES</b><small>Reforç escolar</small></span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Obrir menú" aria-expanded="false">☰</button>
+<nav class="navlinks" id="navLinks"><a href="#academia">L'acadèmia</a><a href="#classes">Classes</a><a href="#nivells">Nivells</a><a href="#preus">Preus</a><a href="#informacio">Informació</a><a href="#contacte" class="btn">Contacta'ns</a></nav>
+</div></header>
+<main>
+<section class="hero" id="inici"><div class="wrap">
+<div><span class="kicker">Reforç escolar a Sant Vicenç de Castellet</span>
+<h1>Reforç escolar amb un acompanyament proper i de confiança.</h1>
+<p class="lead">Una acadèmia dirigida per la Maribel, professora amb més de 20 anys d'experiència docent. Classes individuals i grupals per a alumnes de Primària, ESO i Batxillerat.</p>
+<div class="actions"><a class="btn" href="#preus">Calcula el preu</a><a class="btn o" href="#contacte">Demana informació</a></div></div>
+<dl class="facts"><div><dt>Etapes</dt><dd>Primària · ESO · Batxillerat</dd></div><div><dt>Modalitats</dt><dd>Individual i grupal</dd></div><div><dt>Horari</dt><dd>16:00 – 20:00</dd></div><div><dt>Adreça</dt><dd>C/ Berguedà 4</dd></div></dl>
+</div></section>
+
+<section id="academia"><div class="wrap info">
+<div><span class="kicker">L'acadèmia</span><h2 style="font-size:2rem;margin:10px 0 12px">Una acadèmia de reforç escolar amb trajectòria</h2></div>
+<div><p style="margin:0 0 14px;color:var(--muted)">EducaBages està dirigida per la Maribel, la seva propietària, professora amb més de 20 anys d'experiència a l'aula. Aquesta trajectòria ens permet entendre què necessita cada alumne i com ajudar-lo a avançar.</p><p style="margin:0;color:var(--muted)">Treballem perquè els alumnes resolguin dubtes, agafin bons hàbits d'estudi i guanyin seguretat en el seu dia a dia escolar.</p></div>
+</div></section>
+
+<section class="alt" id="classes"><div class="wrap">
+<div class="head"><span class="kicker">Les classes</span><h2>Reforç del que s'aprèn a l'aula</h2><p>Dues modalitats, segons les necessitats de cada alumne. Les classes individuals tenen un preu superior al de les classes grupals.</p></div>
+<div class="cols"><div class="col"><h3>Classes individuals</h3><p>Atenció totalment personalitzada: la classe s'adapta al ritme i a les necessitats de l'alumne. Tenen un preu superior al de les classes grupals.</p></div><div class="col"><h3>Classes grupals</h3><p>Reforç en grup, en un ambient de treball i companyonia. És l'opció més econòmica.</p></div></div>
+</div></section>
+
+<section id="nivells"><div class="wrap">
+<div class="head"><span class="kicker">Etapes educatives</span><h2>Reforç per a cada etapa</h2></div>
+<div class="levels"><div class="level"><span>01</span><h3>Primària</h3><p>Reforç de les assignatures i hàbits d'estudi</p></div><div class="level"><span>02</span><h3>ESO</h3><p>Reforç de les assignatures i hàbits d'estudi</p></div><div class="level"><span>03</span><h3>Batxillerat</h3><p>Reforç de les assignatures i hàbits d'estudi</p></div></div>
+</div></section>
+
+<section id="preus"><div class="wrap">
+<div class="head"><span class="kicker">Preus</span><h2>Calculadora de preus</h2><p>Indica el curs, la modalitat i les hores de classe a la setmana per obtenir una estimació mensual.</p></div>
+<div class="calc">
+<div class="calc-in">
+<div class="field"><label for="cLevel">Curs</label><select id="cLevel"></select></div>
+<div class="field"><label for="cMode">Modalitat</label><select id="cMode"><option value="grupal">Classes grupals</option><option value="individual">Classes individuals</option></select></div>
+<div class="field"><label for="cHours">Hores de classe a la setmana</label><div class="hrs"><input type="range" id="cHours" min="1" max="10" step="1" value="2"><output id="cHoursOut" for="cHours"></output></div></div>
+<p class="note">Estimació orientativa. Les classes individuals tenen un preu superior al de les grupals. El preu final es confirma amb l'acadèmia.</p>
+</div>
+<div class="calc-out" aria-live="polite">
+<small>Estimació mensual</small>
+<div class="total"><span id="rTotal">–</span> <i>€/mes</i></div>
+<div class="sum"><div><span>Curs</span><span id="rLevel"></span></div><div><span>Modalitat</span><span id="rMode"></span></div><div><span>Hores / setmana</span><span id="rHours"></span></div><div><span>Preu per hora</span><span id="rRate"></span></div></div>
+<a class="btn" id="rCta" href="#contacte">Demanar aquesta opció</a>
+<p class="note">Càlcul sobre 4,33 setmanes de mitjana al mes.</p>
+</div></div>
+</div></section>
+
+<section class="alt" id="informacio"><div class="wrap info">
+<div><span class="kicker">Ens trobaràs aquí</span><h2 style="font-size:2rem;margin:10px 0 12px">EducaBages, a Sant Vicenç de Castellet</h2><p style="color:var(--muted);margin:0">Vine a conèixer l'acadèmia o posa't en contacte amb nosaltres per demanar informació sobre les classes.</p></div>
+<div>
+<div class="row"><strong>Adreça</strong>C/ Berguedà 4, Sant Vicenç de Castellet<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Carrer+Bergued%C3%A0+4%2C+Sant+Vicen%C3%A7+de+Castellet" style="color:var(--g);font-weight:600">Veure a Google Maps ↗</a></div>
+<div class="row"><strong>Telèfon</strong><a href="tel:+34656913778">656 913 778</a></div>
+<div class="row"><strong>Correu electrònic</strong><a href="mailto:educabages@gmail.com">educabages@gmail.com</a></div>
+<div class="row"><strong>Horari</strong>De 16:00 a 20:00</div>
+</div></div></section>
+
+<section id="contacte"><div class="wrap contact">
+<div><span class="kicker">Contacte</span><h2 style="font-size:2rem;margin:10px 0 12px">Explica'ns què necessites</h2><p style="color:var(--muted)">Si vols més informació sobre les classes individuals o grupals, posa't en contacte amb EducaBages.</p>
+<p><strong>WhatsApp:</strong> <a href="https://wa.me/34656913778?text=Hola%20Maribel%2C%20voldria%20informaci%C3%B3%20sobre%20les%20classes%20d%27EducaBages." target="_blank" rel="noopener">656 913 778 ↗</a></p>
+<p><strong>Instagram:</strong> <a href="https://www.instagram.com/educabages/" target="_blank" rel="noopener">@educabages ↗</a></p></div>
+<div class="card"><form id="contactForm">
+<div><label for="name">Nom i cognoms</label><input id="name" name="name" autocomplete="name" required></div>
+<div><label for="email">Correu electrònic</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div><label for="phone">Telèfon (opcional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+<div><label for="level">Curs</label><select id="level" name="level" required></select></div>
+<div><label for="message">En què et podem ajudar?</label><textarea id="message" name="message" rows="4" required></textarea></div>
+<button class="btn" type="submit">Preparar consulta per correu</button>
+<p class="note" style="margin:0">En enviar el formulari s'obrirà el teu programa de correu amb la consulta preparada. No s'envia ni es desa cap dada automàticament des d'aquesta web.</p>
+</form></div>
+</div></section>
+</main>
+<a class="wa" href="https://wa.me/34656913778?text=Hola%20Maribel%2C%20voldria%20informaci%C3%B3%20sobre%20les%20classes%20d%27EducaBages." target="_blank" rel="noopener" aria-label="Escriu-nos per WhatsApp"><svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.02c0 2.12.55 4.19 1.6 6.01L4 28l7.13-1.87a12.02 12.02 0 0 0 4.91 1.04h.01C22.68 27.17 28 21.77 28 15.15 28 8.4 22.68 3 16.04 3zm0 21.98h-.01a9.97 9.97 0 0 1-5.08-1.39l-.36-.22-4.23 1.11 1.13-4.12-.24-.38a9.96 9.96 0 0 1-1.53-5.3c0-5.5 4.5-9.98 10.03-9.98 2.68 0 5.19 1.04 7.08 2.93a9.9 9.9 0 0 1 2.93 7.06c0 5.51-4.5 9.99-10.02 9.99zm5.5-7.48c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.13 4.53.72.31 1.28.5 1.71.64.72.23 1.37.2 1.89.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg><span>WhatsApp</span></a>
+<footer><div class="wrap"><div><strong>EDUCABAGES</strong> · Reforç escolar · Sant Vicenç de Castellet</div><div>© <span id="year"></span> EducaBages · <a href="https://www.instagram.com/educabages/" target="_blank" rel="noopener">Instagram</a></div></div></footer>
+<script>
+/* ===== PREUS: edita aquí les tarifes (€ per hora de classe) ===== */
+const PRICES = {
+  "Primària":    { grupal: 10, individual: 18 },
+  "ESO":         { grupal: 12, individual: 20 },
+  "Batxillerat": { grupal: 14, individual: 22 }
+};
+const WEEKS_PER_MONTH = 4.33;
+/* ================================================================ */
+const $ = id => document.getElementById(id);
+const fmt = n => n.toLocaleString('ca-ES', {minimumFractionDigits: 0, maximumFractionDigits: 2});
+const levels = Object.keys(PRICES);
+$('cLevel').innerHTML = levels.map(l => `<option>${l}</option>`).join('');
+$('level').innerHTML = '<option value="">Selecciona una etapa</option>' + levels.map(l => `<option>${l}</option>`).join('');
+let estimate = '';
+function calc() {
+  const lvl = $('cLevel').value, mode = $('cMode').value, h = parseInt($('cHours').value, 10), rate = PRICES[lvl][mode];
+  const modeName = mode === 'individual' ? 'Individual' : 'Grupal';
+  const total = Math.round(h * rate * WEEKS_PER_MONTH);
+  $('cHoursOut').textContent = fmt(h) + ' h';
+  $('rTotal').textContent = fmt(total);
+  $('rLevel').textContent = lvl; $('rMode').textContent = modeName; $('rHours').textContent = fmt(h) + ' h';
+  $('rRate').textContent = fmt(rate) + ' €/h';
+  estimate = `Estimació de la calculadora: ${lvl}, classes ${modeName.toLowerCase()}s, ${fmt(h)} h/setmana, aprox. ${fmt(total)} €/mes.`;
+}
+$('cLevel').addEventListener('change', calc); $('cMode').addEventListener('change', calc); $('cHours').addEventListener('input', calc); calc();
+$('rCta').addEventListener('click', () => {
+  $('level').value = $('cLevel').value;
+  if (!$('message').value) $('message').value = estimate + '\nM\'agradaria rebre més informació.';
+});
+const menuBtn = $('menuBtn'), navLinks = $('navLinks');
+menuBtn.addEventListener('click', () => menuBtn.setAttribute('aria-expanded', String(navLinks.classList.toggle('open'))));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+$('year').textContent = new Date().getFullYear();
+$('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = new FormData(e.currentTarget);
+  const body = encodeURIComponent(`Nom: ${f.get('name')}\nCorreu: ${f.get('email')}\nTelèfon: ${f.get('phone') || 'No indicat'}\nCurs: ${f.get('level')}\n\nConsulta: ${f.get('message')}`);
+  window.location.href = 'mailto:educabages@gmail.com?subject=' + encodeURIComponent('Consulta des de la web d’EducaBages') + '&body=' + body;
+});
+</script>
+</body>
+</html>
