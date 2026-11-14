@@ -123,13 +123,17 @@ footer{background:var(--g2);color:#cbd9ce;padding:30px 0;font-size:.88rem}footer
 <p><strong>WhatsApp:</strong> <a href="https://wa.me/34656913778?text=Hola%20Maribel%2C%20voldria%20informaci%C3%B3%20sobre%20les%20classes%20d%27EducaBages." target="_blank" rel="noopener">656 913 778 ↗</a></p>
 <p><strong>Instagram:</strong> <a href="https://www.instagram.com/educabages/" target="_blank" rel="noopener">@educabages ↗</a></p></div>
 <div class="card"><form id="contactForm">
-<div><label for="name">Nom i cognoms</label><input id="name" name="name" autocomplete="name" required></div>
-<div><label for="email">Correu electrònic</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-<div><label for="phone">Telèfon (opcional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-<div><label for="level">Curs</label><select id="level" name="level" required></select></div>
-<div><label for="message">En què et podem ajudar?</label><textarea id="message" name="message" rows="4" required></textarea></div>
-<button class="btn" type="submit">Preparar consulta per correu</button>
-<p class="note" style="margin:0">En enviar el formulari s'obrirà el teu programa de correu amb la consulta preparada. No s'envia ni es desa cap dada automàticament des d'aquesta web.</p>
+<input type="hidden" name="_subject" value="Nova consulta des de la web d'EducaBages">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+<div><label for="parent">Nom del pare / mare / tutor/a</label><input id="parent" name="Nom del pare/mare" autocomplete="name" required></div>
+<div><label for="student">Nom de l'alumne/a</label><input id="student" name="Nom de l'alumne" required></div>
+<div><label for="email">Correu electrònic</label><input id="email" name="Correu" type="email" autocomplete="email" required></div>
+<div><label for="phone">Telèfon (opcional)</label><input id="phone" name="Telèfon" type="tel" autocomplete="tel"></div>
+<div><label for="level">Curs</label><select id="level" name="Curs" required></select></div>
+<div><label for="message">En què et podem ajudar?</label><textarea id="message" name="Consulta" rows="4" required></textarea></div>
+<button class="btn" type="submit" id="sendBtn">Enviar consulta</button>
+<p id="formMsg" role="status" aria-live="polite" style="margin:0;font-weight:600;display:none"></p>
+<p class="note" style="margin:0">En enviar el formulari, les dades s'envien a l'acadèmia únicament per respondre a la teva consulta.</p>
 </form></div>
 </div></section>
 </main>
@@ -169,11 +173,22 @@ const menuBtn = $('menuBtn'), navLinks = $('navLinks');
 menuBtn.addEventListener('click', () => menuBtn.setAttribute('aria-expanded', String(navLinks.classList.toggle('open'))));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }));
 $('year').textContent = new Date().getFullYear();
-$('contactForm').addEventListener('submit', e => {
+const FORM_URL = 'https://formsubmit.app/f/hbph9dpq7p';
+$('contactForm').addEventListener('submit', async e => {
   e.preventDefault();
-  const f = new FormData(e.currentTarget);
-  const body = encodeURIComponent(`Nom: ${f.get('name')}\nCorreu: ${f.get('email')}\nTelèfon: ${f.get('phone') || 'No indicat'}\nCurs: ${f.get('level')}\n\nConsulta: ${f.get('message')}`);
-  window.location.href = 'mailto:educabages@gmail.com?subject=' + encodeURIComponent('Consulta des de la web d’EducaBages') + '&body=' + body;
+  const form = e.currentTarget, btn = $('sendBtn'), msg = $('formMsg');
+  const show = (text, ok) => { msg.textContent = text; msg.style.color = ok ? '#14402c' : '#a33'; msg.style.display = 'block'; };
+  btn.disabled = true; btn.textContent = 'Enviant…'; msg.style.display = 'none';
+  try {
+    const res = await fetch(FORM_URL, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+    if (!res.ok) throw new Error(res.status);
+    form.reset();
+    show('Gràcies! Hem rebut la teva consulta i et respondrem aviat.', true);
+  } catch (err) {
+    show('No s\'ha pogut enviar. Torna-ho a provar o escriu-nos per WhatsApp o correu.', false);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Enviar consulta';
+  }
 });
 </script>
 </body>
